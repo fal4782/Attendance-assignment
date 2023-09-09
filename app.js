@@ -1,24 +1,26 @@
-const time = moment().format('MMMM, YYYY')
 
-console.log(time);
+function setYear() {
+    var year = document.getElementById("year").value
+    console.log(year);
 
-// document.getElementById("timestamp").innerHTML = time
-const year = 2016
-for(let month = 1; month<=12; month++){
+for(let month = 0; month<=11; month++){
     let monthName = moment().month(month).format('MMMM')
-    let monthFormat = month +", "+year
+    let monthFormat = (month+1) +", "+year
     // console.log(monthFormat);
+
     let noOfDays = moment(monthFormat,'M, YYYY').daysInMonth()
-    // console.log(noOfDays);
+    console.log(noOfDays, monthName);
 
     const monthBox = document.getElementById(monthName.toLowerCase())
     // console.log(monthBox);
     let dateContent = ''
 
     for(let day=1;day<=noOfDays;day++){
-        // dateContent += `<div class="dateBox">${day}</div>`
-        dateContent += `<label for="vehicle1">${day}</label><input type="checkbox" value="${day}">`
+        dateContent += `<div class = "dateWrapper"><label for="day">${day}</label><input type="checkbox" value="${day}"></div>`
     }
 
     monthBox.innerHTML = dateContent
 }
+    // return year
+}
+
