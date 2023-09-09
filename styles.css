@@ -23,3 +23,8 @@ p{
     background-color: white;
     border-radius: 7px;
 }
+
+.dateWrapper{
+    /* display: flex;
+    flex-direction: column; */
+}
