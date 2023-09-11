@@ -1,7 +1,7 @@
 
 function setYear() {
 
-    var year = document.getElementById("year").value || 2016
+    var year = document.getElementById("year").value || 2023
     // console.log(year);
     
     document.querySelector(".parent-container").style.display="block"
@@ -12,7 +12,7 @@ function setYear() {
         // console.log(monthFormat);
 
         let noOfDays = moment(monthFormat, 'M, YYYY').daysInMonth()
-        console.log(noOfDays, monthName);
+        // console.log(noOfDays, monthName);
 
         
 
@@ -28,7 +28,7 @@ function setYear() {
         for (let day = 1; day <= noOfDays; day++) {
 
             let date = moment(`${day}-${month+1}-${year}`, 'D-M-YYYY')
-            let dayOfWeek = date.format('ddd')
+            let dayOfWeek = moment(date).format('ddd')
 
             dateContent += `<div class = "dateWrapper"><label for="day">${day}</label><input type="checkbox" value="${day}"><label for="day" id="weekDay">${dayOfWeek}</label></div>`
         }
